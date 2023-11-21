@@ -1,0 +1,9 @@
+const google=document.getElementById('google');
+    google.addEventListener('click',function(e){
+        e.preventDefault();
+        console.log("broweser is clicked");
+    },false)
+
+>>When used here preventDefault() then instead going to the google website when clicked it will shows the browser Event
+
+>>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai And Code| Dom manipualtion(li,function)</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langname){
+        const li=document.createElement('li');
+        li.innerHTML=`${langname}`;
+        document.querySelector('.language').appendChild(li);
+    
+    }
+    addLanguage('python');
+    addLanguage('java');
+
+    function optiaddLanguage(langname){
+        const li=document.createElement('li');
+        li.appendChild(document.createTextNode(langname))
+        document.querySelector('.language').appendChild(li);
+    }
+    optiaddLanguage('golang');
+    optiaddLanguage('c++');
+    
+   //To Edit Elements
+   const secondChild=document.querySelector('li:nth-child(2)')
+  //secondChild.innerHTML='Mojio';
+  //another way to add mojo
+  const newli=docuement.createElement('li');
+  newli.textContent="Mojo";
+  secondChild.replaceWith(newli);
+  
+
+  const firstchild=docuemnt.querySelector('li:first-child');
+  firstchild.outerHTML='<li>Typescript</li>'
+
+
+  //remove
+  const removelang=document.querySelector('li:last-child');
+  removelang.remove();
+    
+</script>
+</html>

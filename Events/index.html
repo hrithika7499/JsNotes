@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events practise
+
+    </title>
+</head>
+<body style="background-color: black;">
+    <ul id="images">
+        <li><img src="https://www.hindustantimes.com/ht-img/img/2023/05/03/1600x900/csk-2010_1683123533729_1683123537835.jpg" width="200px"></li>
+        
+        <li><img src="https://live.staticflickr.com/8389/8651763120_81d1aef419.jpg"width="200px"></li>
+        
+        <li><img src="https://akm-img-a-in.tosshub.com/indiatoday/images/breaking_news/201805/DeOZXURVMAAHJrA.jpg_large.jpeg?VersionId=DvXS7HI0un1tvS_tQWpzD7noPfNDc0wm"width="200px"></li>
+        
+        <li><img src="https://images.hindustantimes.com/img/2021/10/16/1600x900/Dhoni_CSK_1634361836426_1634361847778.JPG"width="200px"></li>
+        
+        <li><img src="https://img.indiaforums.com/article/1040x780/19/7138-ipl-2023-finale-chennai-super-kings-lifts-the-cup-sirjadeja-trends-on-twitter.jpg?c=9iGA22"width="200px"></li>
+    </ul>
+    <a href="https://www.google.com/" id="google">Google</a>
+</body>
+<script>
+    // const google=document.getElementById('google');
+    // google.addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     console.log("broweser is clicked");
+    // },false)
+
+        document.getElementById('images').addEventListener('click',function(e){
+                console.log(e.target.parentNode)//gives the li node as each img parentnode is li
+                if(e.target.tagName ==='IMG'){
+                    //by giving this condition it ensures that only when clciked on img it disappers not e=when we click on list item entire list gets disappered
+                let removeit=e.target.parentNode;
+                removeit.remove(); 
+                }
+        },false)
+
+
+</script>
+</html>
