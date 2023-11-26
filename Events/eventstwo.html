@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai and Code js series</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const changeName=function(){
+        document.querySelector('h1').innerHTML="Namstey react";
+
+    }
+    const timer=setTimeout(changeName,2000);
+    //Now to use cleartimeout function we need to give the reference of setimeout
+   
+    const clearTmer=function(){
+        const stop=document.querySelector('#stop');
+        stop.addEventListener('click',function(){
+            clearTimeout(timer)
+            console.log("event stopped");
+        })
+    }
+clearTmer();
+</script>
+</html>

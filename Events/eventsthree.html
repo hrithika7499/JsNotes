@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai and Javascript</title>
+</head>
+<body>
+    <h2>Events Practise!!!</h2>
+    <button id="start">Start</button>
+    <button id="stop">Stops</button>
+
+    
+</body>
+<script>
+    let setinter;
+const seriesBest=function(){
+    console.log("Goblin")
+}
+const start=document.getElementById('start')
+start.addEventListener('click',function(){
+     setinter=setInterval(seriesBest,1000);
+});
+
+const stop=document.getElementById('stop');
+stop.addEventListener('click',function(){
+    clearInterval(setinter);
+})
+
+
+
+</script>
+</html>
