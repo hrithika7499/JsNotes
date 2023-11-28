@@ -41,7 +41,7 @@ promiseTwo.then(function(user){
 //using the resolve chaining and reject
 
 const promiseThree=new Promise(function(resolve,reject){
-    let error=true;
+    let error=false;
     if(!error){
         resolve({
             username:"Virat",
@@ -55,9 +55,54 @@ const promiseThree=new Promise(function(resolve,reject){
 
 promiseThree.then(function(user){
     console.log(user)
+    return user.username//bydoing this in next chaining we get the username 
 }).then((username)=>console.log(username))
 .catch(function(error){
     console.log(error);
 }).finally(function(){
     console.log("Something got resolved or rejected");
 })
+
+
+const promiseFoor=new Promise(function(resolve,reject){
+    setTimeout(function(){
+        let error=true;
+        if(!error){
+            resolve({
+                username:'mahi',
+                password:'trophycollector'
+            })
+ 
+        }
+        else{
+            reject("No Other captain found");
+        }
+    },1000)
+})
+
+
+//Using async and await
+
+async function consumePromisefour(){
+    try{
+    const response=await promiseFoor
+    console.log(response);
+    }
+    catch(error){
+        console.log(error)
+    }
+}
+
+consumePromisefour();
+
+
+async function getallUsers(){
+    try{
+    const response=await fetch('https://dummyjson.com/products')
+    const data= await response.json()//convert into json formate
+    console.log(data)
+    }catch(error){
+        console.log("e:",error);
+    }
+}
+getallUsers();
